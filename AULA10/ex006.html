@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        div#area{
+            /* fonte do texto */
+            font: normal 20pt Arial;
+            /* cor da div */
+            background: rgb(42, 139, 42);
+            /* cor do conteudo da div */
+            color: white;
+            /* altura */
+            width: 200px;
+            /* largura */
+            height: 200px;
+            /* largura da linha */
+            line-height: 200px;
+            /* alinhamento do texto */
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- onclick pois meu evento vai ser de clicar com o mouse, nome da function dentro do onclick para chamar a function -->
+    <!-- onmouseenter para quando o mouse entrar na div -->
+    <!-- Para nao usar os onclick dessa forma poluindo a tag........ restante no comentario JS ++ -->
+    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
+        Interaja...
+    </div>
+
+    <!-- Exemplo sem as ações
+    <div id="area">
+        Interaja...
+    </div> -->
+
+    <script>
+        //armazenando na variavel conteudo da div pelo id, aqui fora a variavel funciona em qualquer function
+        //se colocasse a variavel dentro da funtion ela só funcionaria para aquela function
+        var area = document.getElementById('area')
+
+        // ++Dessa forma nao precisa colocar mil coisas na tag, apenas o nome da variavel com o nome da ação e function ja basta++
+        area.addEventListener('click',      clicar)
+        area.addEventListener('mouseenter', entrar)
+        area.addEventListener('mouseout',   sair)
+
+        //function para mudar o texto ao clicar na div
+        function clicar(){
+            //ação de mudar o texto após o click, pois innerText muda o texto em JavaScript
+            area.innerText        = 'Clicou!'
+            area.style.background = 'red'
+        }
+
+        //function para mudar o texto da div ao entrar
+        function entrar(){
+            //ação de mudar o texto após o entrar do mouse em cima da div, pois innerText muda o texto em JavaScript
+            area.innerText        = 'Entrou!'
+            area.style.background = 'orange'
+        }
+        
+        function sair(){
+            //ação de mudar o texto após o sair do mouse de cima da div, pois innerText muda o texto em JavaScript
+            area.innerText        = 'Saiu!'
+            area.style.background = 'green'
+        }
+    </script>
+</body>
+</html>

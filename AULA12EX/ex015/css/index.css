@@ -1,0 +1,44 @@
+body{
+    /* deixa o body todo dessa cor */
+    background: rgb(100, 100, 233);
+    /* deixa todas as font dentro do body Arial */
+    font: normal 15pt Arial;
+}
+
+h1{
+    /* muda a cor da letra */
+    color: white;
+    /* centraliza texto  */
+    text-align: center;
+}
+
+section{
+    /* deixa o section com essa cor */
+    background: white;
+    /* deixa os cantinhos mais arredondados */
+    border-radius: 10px;
+    /* deixa com espaço dentro, aumenta o tamanho  do bloco*/
+    padding: 15px;
+    /* mexe com a largura do bloco */
+    width: 500px;
+    /* para centralizar */
+    margin: auto;
+    /* coloca uma sombrinha na section inteira ou seja, no bloquinho branco que criamos.
+    descrição dos pixels: deslocamento lateral, deslocamento vertical, espalhamento, cor */
+    box-shadow: 5px 5px 10px black;
+}
+
+.div-img{
+    /* centraliza o texto */
+    text-align: center;
+}
+
+footer{
+    /* centraliza o texto */
+    text-align: center;
+    /* cor da letra */
+    color: white;
+    /* espaçamento de cima para baixo */
+    padding: 15px;
+}
+

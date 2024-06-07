@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando Números</title>
+    <style>
+        body{
+            /* muda a fonte do texto dentro do body */
+            font: normal 18pt Arial;
+        }
+        input{
+            /* muda a fonte do texto dentro do body */
+            font: normal 18pt Arial;
+            /* altera o tamanho do campo input */
+            width: 100px;
+        }
+        div#res{
+            /* coloca um espaçamento de cima para baixo na div */
+            margin-top: 20px;
+        }
+        input#button{
+            /* coloca um espaçamento de cima para baixo no botão */
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Somando Valores</h1>
+    <input type="number" name="n1" id="n1">
+    </br>
+    +
+    </br>
+    <input type="number" name="n2" id="n2">
+    </br>
+    <input type="button" value="somar" onclick="somar()" id="button">
+    </br>
+    <div id="res">Resultado</div>
+
+    <script>
+        function somar(){
+            //armazenando na variavel o valor digitado
+            var n1  = document.querySelector('input#n1')
+            var n2  = document.querySelector('input#n2')
+            var res = document.querySelector('div#res')
+            
+            //transformando em number o valor digitado, precisa do value para ele identificar que é o valor dentro da variavel
+            var n1 = Number(n1.value)
+            var n2 = Number(n2.value)
+
+            //calculo da soma
+            var s = n1 + n2
+
+            //muda o conteudo de dentro da div para o que tiver aqui dentro
+            res.innerHTML = `A soma entre ${n1} e ${n2} é igual a <strong>${s}</strong>`
+        }
+    </script>
+</body>
+</html>

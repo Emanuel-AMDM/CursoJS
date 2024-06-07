@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+    <style>
+        body{
+            background: rgb(68,125,199);
+            color: white;
+            font: normal 18pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos com DOM</h1>
+
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
+
+    <div name="msg" id="msg">Clique em mim</div>
+
+    <script>
+        //getElementsByTagName pega mas de um elemento ou seja ele ta pegando os dois paragrafos, porém
+        //o colchete [] com zero dentro [0] é para pegar apenas o primeiro paragrafo pois é o da posição 0
+        var p1 = window.document.getElementsByTagName('p')[1]
+
+        //innerText pega o texto que ta dentro do paragrafo onde armazenamos na variavel
+        //window.document.write('Está escrito assim: ' + p1.innerText)
+
+        //colocando style direto na tag p que esta na variavel
+        //p1.style.color = 'blue'
+
+        //guardando na variavel o body da pagina
+        var corpo = window.document.body
+
+        //deixando o body armazenado na variavel corpo em preto
+        //corpo.style.background = 'black'
+
+        //document.write(p1.innerText)
+        //window.alert(p1.innerHTML)
+        /*
+        //pega pelo id da tag
+        var d = document.getElementById('msg')
+        //muda a cor da div que armazenamos na variavel pelo id
+        d.style.background = 'green'
+        //muda o texto que esta na tag que pegamos pelo id
+        d.innerText = 'Estou aguardando....'*/
+
+        // var d = document.getElementesByName('msg')[0]
+        // d.innetText = 'Olá!'
+
+        //class é com .
+        var d = document.querySelector('div#msg')
+        d.style.color = 'blue'
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar se a pessoa é brasileira</title>
+    <style>
+        body{
+            background-color: aqua;
+            font: normal 20px Arial;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <h1>Digite de que país você é:</h1>
+
+    Meu pai é: <input type="text" name="pais" id="pais">
+    <input type="button" id="verificar" value="verificar" onclick="verificaPais()">
+
+    <div id="res"></div>
+
+    <script>
+        function verificaPais(){
+            var pais = document.querySelector('input#pais')
+            var res  = document.querySelector('div#res')
+
+            if(pais == 'brasil'){
+                res.innerHTML = `Você é <strong>Brasileiro</strong>`
+            }else{
+                res.innerHTML = `Você é <strong>Estrangeiro</strong>`
+            }
+        }
+    </script>
+</body>
+</html>

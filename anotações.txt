@@ -1,0 +1,252 @@
+PARA ENTRAR NO TERMINAL DO NODE, APENAS DIGITAR NODE DO TERMINAL;
+PARA SAIR DO TERMINAL DO NODE, APENAS DIGITAR .exit;
+PARA COMPILAR UM FILE.JS BAIXAR EXTENSÃO "NODE EXEC" DO FOGUETINHO, SÓ APERTAR F8 QUE EXECUTA OU F9 PARA CANCELAR EXECUÇÃO;
+
+TYPEOF MOSTRA QUAL O TIPO DO VALOR INFORMADO OU DO VALOR DENTRO DA VARIAVEL:
+
+> var idade = 18
+undefined
+> var salario = 2550.35
+undefined
+> var n = 200
+undefined
+> n
+200
+> typeof n
+'number'
+> n = 'google'
+'google'
+> typeof n
+'string'
+> typeof 6
+'number'
+> typeof 6.5
+'number'
+> typeof []
+'object'
+> typeof{}
+'object'
+> typeof function(){}
+'function'
+> typeof undefined
+'undefined'
+> typeof NaN
+'number'
+> typeof Infinity
+'number'
+> typeof null
+'object'
+
+CRASE TE AJUDA A IMPRIMIR TEXTO SEM PRECISAR CONCATENAR COM '+':
+
+var nome  = "gustavo"
+var idade = 41
+var nota  = 5.5
+
+> `O aluno ${nome} com ${idade} anos tirou a nota ${nota}`
+'O aluno gustavo com 41 anos tirou a nota 5.5'
+
+${n1} serve para trazer a variavel sem concatenar com '+'
+
+FORMATAR STRING:
+
+variavel.length        -> conta quantos caracteres tem na string
+variavel.toUpperCase() -> deixa tudo em letra maiuscula
+variavel.toLowerCase() -> deixa tudo em letra minuscula
+
+FORMATAR NUMBER:
+
+variavel.toFixed(2)                                                    -> deixa o numero com duas casas decimais
+variavel.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}) -> formata o numero para o valor de dinheiro R$valorvariavel
+
+OPERADORES ARITIMETICOS:
+
++  -> soma, precisa ser convertido para number os numeros
+-  -> subtração, precisa ser convertido para number os numeros
+*  -> multiplicação, precisa ser convertido para number os numeros
+/  -> divisão, precisa ser convertido para number os numeros
+%  -> resto da divisão(pega o restante, exemplo: 3 % 2 = 1(resultado da subtração da divisão)), precisa ser convertido para number os numeros
+** -> elevado(eleva um valor, exemplo: 2**2(2 elevado a 2)), precisa ser convertido para number os numeros
+
+OPERADORES ARITIMETICOS ATRIBUIÇÃO:
+
+n = 3
+
+n   += 4 -> ele vai fazer 3 + 4, pois n ta somando ele mesmo, ele soma ele mesmo e entra no 'n'
+n   -= 4 -> mesma explicação do de cima para subtração
+n   *= 4 -> mesma explicação do de cima para multiplicação
+n   /= 4 -> mesma explicação do de cima para divisão
+n   %= 4 -> mesma explicação do de cima para resto da divisão
+n  **= 4 -> mesma explicação do de cima para elevado
+
+n++ -> faz o valor de 'n' somar mais 1
+n-- -> faz o valor de 'n' subtrair 1 
+n** -> faz o valor de 'n' multiplicar 1
+n// -> faz o valor de 'n' dividir 1
+n%% -> faz o valor de 'n' resto da divisão 1
+n** -> faz o valor de 'n' elevado 1
+
+TESTE LOGICO(IF):
+
+logica ? se verdade : se falso
+
+DOM(Document Object Model):
+Seria basicamente a arvore dos elementos, o que é dentro do que.
+Elementos DOM, parent(são os de baixo) e child(são os de cima)
+
+COMANDOS:
+getElementsByTagName - pega mais de um elemento ou seja ele pega todas as tags declaradas
+-exemplo:   
+            <html>
+                <p>Mensagem</p>
+                <p>Mensagem2</p>
+            </html>
+            <script>
+                var p1 = document.getElementsByTagName('p')
+            </script>
+-porém:
+o colchete [] com zero dentro [0] é para pegar apenas o primeiro paragrafo pois é o da posição 0:
+-exemplo:   
+            <html>
+                <p>Mensagem</p>
+                <p><strong>Mensagem2</strong></p>
+            </html> 
+            <script>
+                var p1 = window.document.getElementsByTagName('p')[0]
+            </script>
+
+innerText - pega o texto que ta dentro do paragrafo onde armazenamos na variavel
+-exemplo:   
+            <html>
+                <p>Mensagem</p>
+                <p><strong>Mensagem2</strong></p>
+            </html>
+            <script>
+                var p1 = window.document.getElementsByTagName('p')[0]
+                document.write('Está escrito assim: ' + p1.innerText)
+            </script>
+
+innerHTML - pega o html que ta dentro do paragrafo onde armazenamos na variavel, ou seja, se tiver um strong no paragrado
+para deixar em negrito ele vem em negrito onde no innerText so viria a texto
+-exemplo:   
+            <html>
+                <p>Mensagem</p>
+                <p><strong>Mensagem2</strong></p>
+            </html>
+            <script>
+                var p1 = window.document.getElementsByTagName('p')[1]
+                document.write('Está escrito assim: ' + p1.innerHTML)
+            </script>
+
+colocando style direto na tag 'p' que esta na variavel:
+-exemplo: 
+            <script>
+                var p1 = window.document.getElementsByTagName('p')[1]
+                p1.style.color = 'blue'
+            </script>
+
+guardando na variavel o body da pagina:
+-exemplo: 
+            <script>
+                var corpo = document.body
+            </script>
+deixando o body armazenado na variavel corpo em preto:
+-exemplo: 
+            <script>
+                var corpo = document.body
+                corpo.style.background = 'black'
+            </script>
+
+document.write - printa na tela
+-exemplo: 
+            <script>
+                document.write(variavel.innerText)
+            </script>
+
+window.alert - abre um modalzinhoantes antes da pagina carregar
+-exemplo: 
+            <script>
+                window.alert(variavel.innerHTML)
+            </script>
+
+document.getElementById - pegar pelo id da taga HTML
+-exemplo:   
+            <html>
+                <div id='msg'>Mensagem</div>
+            </html>
+            <script>
+                var d = document.getElementById('msg')
+            </script>
+d.style.background - mudar o style da div
+-exemplo:
+            <html>
+                <div id='msg'>Mensagem</div>
+            </html>
+            <script>
+                var d = document.getElementById('msg')
+                d.style.background = 'green'
+            </script>
+d.innerText - muda o texto que tinha dentro da div
+-exemplo:
+            <html>
+                <div id='msg'>Mensagem</div>
+            </html>
+            <script>
+                var d = document.getElementById('msg')
+                d.style.background = 'green'
+                d.innerText = 'Estou aguardando....'
+            </script>
+
+
+
+document.getElementesByName - pega pelo name da tag
+-exemplo:
+            <html>
+                <div name='msg'>Mensagem</div>
+            </html>
+            <script>
+                var d = document.getElementesByName('msg')[0]
+                d.innetText = 'Olá!'
+            </script>
+
+document.querySelector - pega pela tag e id ou class
+sempre lembrando que para class usamos '.' e para id usamos '#'
+-exemplo - id:
+            <html>
+                <div id='msg'>Mensagem</div>
+            </html>
+            <script>
+                var d = document.querySelector('div#msg')
+                d.style.color = 'blue'
+            </script>
+
+-exemplo - class:
+            <html>
+                <div class='msg'>Mensagem</div>
+            </html>
+            <script>
+                var d = document.querySelector('div.msg')
+                d.style.color = 'blue'
+            </script>
+
+COMO DESCOBRIR ERROS JAVASCRIPT:
+
+abrir o prompt: cntrl + shift + c
+depois confere no inspecionar confere se tem aquele bolinha vermelha com x e um numero do lado, no cato superior direito,
+ao lado da engrenagem, clica nele que ele alem de dar o erro vai te dizer a linha que ta o erro que é sempre daquela pra cima.
+Clicando na linha onde ta o erro ele te da exatamente onde ta o erro dentro do inspecionar.
+
+PRINTAR NA TELA TAMBÉM:
+
+console.log(`Á velocidade do seu carro é ${vel} por hora`)
+console.log('Dirija sempre usando cinto de segurança')
+
+CHAMAR FUNCTION:
+
+voce pode chamar ela de varias maneiras, onclick, aquele de passar o mouse, sair com mouse.
+tem tambem onload que seria quando a pagina carregar que voce pode usar no body.
+
+PARA CRIAR CAMPO NO HTML DIRETO PELO JAVASCRIPT:
+
+voce cria uma variavel exemplo : var img = document.createElement('img')    = nome variavel, function ja do JS, nometag
+depois da o atributo de id pra ela exemplo : img.setAttribute('id', 'foto') = nome variavel, function ja do JS, atributo no caso id, nome atributo no caso foto
